@@ -1,0 +1,187 @@
+Metadata-Version: 2.4
+Name: securesettings-lab
+Version: 0.1.0
+Summary: مدیریت امن تنظیمات برنامه با رمزنگاری AES-256
+Author-email: Hasan Bagheri <hasan111bagher@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/0hasanbagheri0/securesettings
+Project-URL: Repository, https://github.com/0hasanbagheri0/securesettings
+Project-URL: Issues, https://github.com/0hasanbagheri0/securesettings/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Security :: Cryptography
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cryptography>=3.0.0
+Dynamic: license-file
+
+# SecureSettings
+
+مدیریت امن تنظیمات برنامه با رمزنگاری AES-256
+
+[![PyPI version](https://badge.fury.io/py/securesettings.svg)](https://badge.fury.io/py/securesettings)
+[![Python 3.7+](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+---
+
+## 🌐 English | [فارسی](#فارسی)
+
+---
+
+# English Documentation
+---
+## 📁 SecureSettings
+
+**SecureSettings** is a Python library for securely storing and managing application settings with AES-256 encryption. It provides a simple way to store sensitive data like API tokens, passwords, and configuration values.
+---
+### ✨ Key Features
+
+- **AES-256 Encryption**: All data is encrypted with strong encryption
+- **Multiple Data Types**: Support for strings, numbers, lists, dictionaries, booleans
+- **Auto-load**: Settings are automatically loaded when initialized
+- **Backup & Restore**: Automatic backup and restore functionality
+- **No External Dependencies**: Uses only Python standard library and cryptography
+---
+### 📦 Installation
+
+```bash
+pip install securesettings
+```
+---
+# 🚀 Quick Start
+```bash
+from securesettings import Settings
+```
+---
+# Create settings with encryption
+```bash
+settings = Settings("my_app", password="your_secure_password")
+```
+---
+# Store sensitive data
+```bash
+settings.set("api_key", "sk-1234567890")
+settings.set("debug", True)
+settings.set("allowed_users", ["ali", "sara", "reza"])
+settings.save()
+```
+---
+# Load in another session
+```bash
+settings2 = Settings("my_app", password="your_secure_password")
+api_key = settings2.get("api_key")  # "sk-1234567890"
+debug = settings2.get("debug", False)  # True
+users = settings2.get("allowed_users", [])  # ["ali", "sara", "reza"]
+```
+---
+
+# 📚 API Reference
+
+## Settings Class
+|Method	|Description|
+|:---|:---|
+|Settings(name, password, encrypt=True)	|Create a new settings instance|
+|set(key, value)	|Store a value|
+|get(key, default=None)	|Retrieve a value|
+|delete(key)	|Delete a key|
+|clear()	|Clear all settings|
+|get_all()	|Get all settings as dict|
+|has(key)	|Check if key exists|
+|save()	|Save settings to file|
+|backup()	|Create a backup|
+|restore_backup()	|Restore from backup|
+|reset()	|Reset to default|
+---
+## 🛠️ Requirements
+
+Python 3.7 or higher
+
+cryptography>=3.0.0
+---
+## 📄 License
+MIT
+---
+# فارسی
+# 📁 SecureSettings
+SecureSettings یک کتابخانه پایتونی برای ذخیره‌سازی و مدیریت امن تنظیمات برنامه با رمزنگاری AES-256 است. این کتابخانه روشی ساده برای ذخیره اطلاعات حساس مانند توکن‌های API، رمزهای عبور و تنظیمات برنامه ارائه می‌دهد.
+---
+## ✨ ویژگی‌ها
+-**رمزنگاری AES-256:** همه داده‌ها با رمزنگاری قوی محافظت می‌شوند
+
+-پشتیبانی از انواع داده: رشته، عدد، لیست، دیکشنری، Boolean
+
+-بارگذاری خودکار: تنظیمات در زمان مقداردهی اولیه بارگذاری می‌شوند
+
+-پشتیبان و بازیابی: قابلیت پشتیبان‌گیری و بازیابی خودکار
+
+-ادگی: استفاده آسان و بدون پیچیدگی
+---
+
+# 📦 نصب
+
+```bash
+pip install securesettings
+```
+---
+# 🚀 شروع سریع
+
+```bash
+from securesettings import Settings
+```
+---
+
+# ایجاد تنظیمات با رمزنگاری
+```bash
+settings = Settings("my_app", password="رمز_امن_شما")
+```
+---
+
+# ذخیره اطلاعات حساس
+
+```bash
+settings.set("api_key", "sk-1234567890")
+settings.set("debug", True)
+settings.set("allowed_users", ["علی", "سارا", "رضا"])
+settings.save()
+```
+---
+# بارگذاری در جلسه دیگر
+
+```bash
+settings2 = Settings("my_app", password="رمز_امن_شما")
+api_key = settings2.get("api_key")  # "sk-1234567890"
+debug = settings2.get("debug", False)  # True
+users = settings2.get("allowed_users", [])  # ["علی", "سارا", "رضا"]
+```
+---
+
+# 📚 راهنمای توابع
+## کلاس Settings
+|توضیح|تابع|
+|:---|:---|
+|Settings(name, password, encrypt=True)	|ایجاد یک نمونه جدید از تنظیمات|
+|set(key, value)	|ذخیره یک مقدار|
+|get(key, default=None)	|دریافت یک مقدار|
+|delete(key)	|حذف یک کلید|
+|clear()	|پاک کردن همه تنظیمات|
+|get_all()	|دریافت همه تنظیمات به صورت دیکشنری|
+|has(key)	|بررسی وجود کلید|
+|save()	|ذخیره تنظیمات در فایل|
+|backup()	|ایجاد پشتیبان|
+|restore_backup()	|بازیابی از پشتیبان|
+|reset()	|بازنشانی به حالت اولیه|
+---
+# 🛠️ نیازمندی‌ها
+Python 3.7 یا بالاتر
+
+cryptography>=3.0.0
+---
+# 📄 مجوز
+MIT
+---
+# ✨ اگر این کتابخانه برای شما مفید بود، به آن یک ⭐ در گیت‌هاب بدهید!

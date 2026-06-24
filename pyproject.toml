@@ -1,0 +1,29 @@
+[project]
+name = "securesettings-lab"
+version = "0.1.0"
+description = "مدیریت امن تنظیمات برنامه با رمزنگاری AES-256"
+readme = "README.md"
+authors = [
+    {name = "Hasan Bagheri", email = "hasan111bagher@gmail.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "cryptography>=3.0.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/0hasanbagheri0/securesettings-lab"
+Repository = "https://github.com/0hasanbagheri0/securesettings-lab"
+Issues = "https://github.com/0hasanbagheri0/securesettings-lab/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]

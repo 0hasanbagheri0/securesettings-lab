@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/securesettings/__init__.py
+src/securesettings/crypto.py
+src/securesettings/settings.py
+src/securesettings.egg-info/PKG-INFO
+src/securesettings.egg-info/SOURCES.txt
+src/securesettings.egg-info/dependency_links.txt
+src/securesettings.egg-info/requires.txt
+src/securesettings.egg-info/top_level.txt
+tests/test_securesettings.py
